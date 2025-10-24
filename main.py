@@ -9,15 +9,16 @@ from urllib.parse import quote
 import sqlite3
 from datetime import datetime
 
+
+import os
+
 # ========== إعدادات البوت ==========
-BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE'
+BOT_TOKEN = os.environ.get('BOT_TOKEN', 'YOUR_BOT_TOKEN_HERE')
 
 # ========== إعدادات AliExpress API ==========
-APP_KEY = 'YOUR_APP_KEY'
-APP_SECRET = 'YOUR_APP_SECRET'
-TRACKING_ID = 'YOUR_TRACKING_ID'
-API_GATEWAY = 'https://api-sg.aliexpress.com/sync'
-
+APP_KEY = os.environ.get('APP_KEY', 'YOUR_APP_KEY')
+APP_SECRET = os.environ.get('APP_SECRET', 'YOUR_APP_SECRET')
+TRACKING_ID = os.environ.get('TRACKING_ID', 'YOUR_TRACKING_ID')
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # ========== قاعدة البيانات ==========
