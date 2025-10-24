@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: aliexpress-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: APP_KEY
+        sync: false
+      - key: APP_SECRET
+        sync: false
+      - key: TRACKING_ID
+        sync: false
